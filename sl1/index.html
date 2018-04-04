@@ -22,23 +22,35 @@
         static-body></a-sphere>
 
       <a-entity position="0 -7 -5">
-        <a-entity id="plane" dynamic-body arrow-control position="0 8 0">
-          <a-cylinder shadow id="body" color="#eb6f5f" segments-radial="3"
-                      rotation="0 -90 90" scale="0.35 0.5 1" collects-rewards
-                      aabb-collider="objects: .reward"></a-cylinder>
-          <a-box id="head" color="#93433e" width="0.45" height="0.7" depth="0.6"
-                 position="0.70 0 0" collects-rewards
-                 aabb-collider="objects: .reward"></a-box>
-          <a-box id="wings" color="#eb6f5f" width="1.5" height="0.1" depth="0.5"
-                 rotation="0 90 0" shadow></a-box>
-          <a-box id="tail" color="#eb6f5f" width="0.3" height="0.3" depth="0.1"
-                 position="-0.75 0.15 0" rotation="0 0 90" shadow></a-box>
-          <a-entity id="propeller" position="1.0 0 0">
-            <a-box id="left" mixin="propeller"></a-box>
-            <a-box id="right" mixin="propeller" rotation="90 0 0"></a-box>
-            <a-cylinder id="axle" color="#603d0b" rotation="0 0 90"
-                        radius="0.05" height="0.2"></a-cylinder>
-          </a-entity>
+        <a-entity id="building" dynamic-body position="0 7.5 0">
+          <a-box id="head" color="#eb6f5f" width="1.5" height="1.5" depth="1.5"></a-box>
+          <a-box id="roof" color="#592923" width="1.7" height="0.2" depth="2.0" position="0 0.76 0.2"></a-box>
+          <a-box id="pole" color="#592923" width="0.1" height="1.5" depth="0.1" position="-0.75 0 1.1"></a-box>
+          <a-box id="pole" color="#592923" width="0.1" height="1.5" depth="0.1" position="0.75 0 1.1"></a-box>
+          <a-box id="base" color="#592923" width="0.3" height="0.2" depth="0.3" position="0.75 -0.6 1.1"></a-box>
+          <a-box id="base" color="#592923" width="0.3" height="0.2" depth="0.3" position="-0.75 -0.6 1.1"></a-box>
+          <a-box id="door" color="#592923" width="0.3" height="0.5" depth="0.1" position="-0.16 -0.4 0.75"></a-box>
+          <a-box id="door" color="#592923" width="0.3" height="0.5" depth="0.1" position="0.16 -0.4 0.75"></a-box>
+          <a-box id="sign" color="#ff9000" width="0.8" height="0.5" depth="0.25" position="0 1 0"></a-box>
+          <a-entity text="align: center; width:0.6; value: Pizza" position="0.1 1 0.13" font="kelsonsans" wrap-count="10">
+        </a-entity>
+        <!--<a-entity id="plane" dynamic-body arrow-control position="0 8 0">-->
+          <!--<a-cylinder shadow id="body" color="#eb6f5f" segments-radial="3"-->
+                      <!--rotation="0 -90 90" scale="0.35 0.5 1" collects-rewards-->
+                      <!--aabb-collider="objects: .reward"></a-cylinder>-->
+          <!--<a-box id="head" color="#93433e" width="0.45" height="0.7" depth="0.6"-->
+                 <!--position="0.70 0 0" collects-rewards-->
+                 <!--aabb-collider="objects: .reward"></a-box>-->
+          <!--<a-box id="wings" color="#eb6f5f" width="1.5" height="0.1" depth="0.5"-->
+                 <!--rotation="0 90 0" shadow></a-box>-->
+          <!--<a-box id="tail" color="#eb6f5f" width="0.3" height="0.3" depth="0.1"-->
+                 <!--position="-0.75 0.15 0" rotation="0 0 90" shadow></a-box>-->
+          <!--<a-entity id="propeller" position="1.0 0 0">-->
+            <!--<a-box id="left" mixin="propeller"></a-box>-->
+            <!--<a-box id="right" mixin="propeller" rotation="90 0 0"></a-box>-->
+            <!--<a-cylinder id="axle" color="#603d0b" rotation="0 0 90"-->
+                        <!--radius="0.05" height="0.2"></a-cylinder>-->
+          <!--</a-entity>-->
         </a-entity>
       </a-entity>
 
