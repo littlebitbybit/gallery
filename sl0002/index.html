@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0002</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+      <a-sphere id="earth" position="0 -7 -5" radius="7" color="#0f6891" shadow
+        static-body></a-sphere>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-entity position="0 -7 -5">
+        <a-entity id="boat" dynamic-body position="0 7.5 0">
+          <a-box id="body" shadow color="#7c470e" width="1.5" height="1.5" depth="1"></a-box>
+          <a-box id="head1" shadow color="#7c470e" position="1 0.25 0" width="0.5" height="1." depth="0.8"></a-box>
+          <a-box id="head2" shadow color="#7c470e" position="1.35 0.5 0" width="0.25" height="0.5" depth="0.5"></a-box>
+          <a-box id="left" shadow color="#7c470e" position="0 0.25 0.5" width="1" height="1" depth="0.1"></a-box>
+          <a-box id="tail1" shadow color="#7c470e" position="-1 0.25 0" width="0.5" height="1." depth="0.8"></a-box>
+          <a-box id="tail2" shadow color="#7c470e" position="-1.35 0.5 0" width="0.25" height="0.5" depth="0.5"></a-box>
+          <a-box id="right" shadow color="#7c470e" position="0 0.25 -0.5" width="1" height="1" depth="0.1"></a-box>
+
+          <a-box id="fenceLeft" shadow color="#5b340a" position="0 0.8 0.4" width="1.2" height="0.1" depth="0.1"></a-box>
+          <a-box id="fenceRight" shadow color="#5b340a" position="0 0.8 -0.4" width="1.2" height="0.1" depth="0.1"></a-box>
+          <a-box id="fenceHead" shadow color="#5b340a" position="0.9 0.8 0" width="0.1" height="0.1" depth="0.5"></a-box>
+          <a-box id="fenceTail" shadow color="#5b340a" position="-0.9 0.8 0" width="0.1" height="0.1" depth="0.5"></a-box>
+
+          <a-box id="toilet" shadow color="#5b340a" position="1.5 0.75 0" width="1" height="0.2" depth="0.2" rotation="0 0 30"></a-box>
+          <a-box id="mast" shadow color="#5b340a" position="0 1.5 0" width="0.2" height="2" depth="0.2"></a-box>
+          <a-box id="sail1" shadow color="white" position="0.1 2.3 0" width="0.1" height="0.1" depth="1.5"></a-box>
+          <a-box id="sail2" shadow color="white" position="0.2 2.2 0" width="0.1" height="0.1" depth="1.5"></a-box>
+          <a-box id="sail3" shadow color="white" position="0.3 2.05 0" width="0.1" height="0.2" depth="1.5"></a-box>
+          <a-box id="sail4" shadow color="white" position="0.4 1.7 0" width="0.1" height="0.5" depth="1.5"></a-box>
+          <a-box id="sail5" shadow color="white" position="0.3 1.35 0" width="0.1" height="0.2" depth="1.5"></a-box>
+          <a-box id="sail6" shadow color="white" position="0.2 1.2 0" width="0.1" height="0.1" depth="1.5"></a-box>
+          <a-box id="sail7" shadow color="white" position="0.1 1.1 0" width="0.1" height="0.1" depth="1.5"></a-box>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
