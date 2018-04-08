@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0003</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+        <a-mixin id="stripe" material="color: #333333" geometry="width:0.05; height:0.05; depth:1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -5 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -6 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-entity id="city">
+        <a-box id="ground" position="0 -0.5 -5" width="20" height="0.1" depth="30" color="#3f913d"></a-box>
+        <a-entity id="road" shadow position="4 0 -5" rotation="0 -45 0">
+          <a-box color="#f4ee84" width="1" height="0.1" depth="12"></a-box>
+          <a-entity id="stripes" position="0 0 0">
+              <a-box position="0 0.075 -3" mixin="stripe"></a-box>
+              <a-box position="0 0.075 -4.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 -1.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 0" mixin="stripe"></a-box>
+              <a-box position="0 0.075 1.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 3" mixin="stripe"></a-box>
+              <a-box position="0 0.075 4.5" mixin="stripe"></a-box>
+          </a-entity>
+          <a-entity id="house" position="-0.75 0 0">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="-0.75 0 1.75">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="-0.75 0 3.25">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="-0.75 0 4.75">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f79409" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+        </a-entity>
+          <a-entity id="road" shadow position="-4 0 -5" rotation="0 45 0">
+          <a-box color="#f4ee84" width="1" height="0.1" depth="12"></a-box>
+              <a-entity id="stripes" position="0 0 0">
+              <a-box position="0 0.075 -3" mixin="stripe"></a-box>
+              <a-box position="0 0.075 -4.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 -1.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 0" mixin="stripe"></a-box>
+              <a-box position="0 0.075 1.5" mixin="stripe"></a-box>
+              <a-box position="0 0.075 3" mixin="stripe"></a-box>
+              <a-box position="0 0.075 4.5" mixin="stripe"></a-box>
+          </a-entity>
+          <a-entity id="house" position="0.75 0 0" rotation="0 180 0">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="0.75 0 1.75" rotation="0 180 0">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="0.75 0 3.25" rotation="0 180 0">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+            <a-entity id="house" position="0.75 0 4.75" rotation="0 180 0">
+              <a-box id="main" color="#27a57d" position="0 0.5 0" width="0.5" height="1" depth="0.75"></a-box>
+              <a-box id="door" color="#666666" position="0.25 0.2 0.1" width="0.1" height="0.3" depth="0.15"></a-box>
+              <a-box id="knob" color="#333333" position="0.3 0.2 0.15" width="0.05" height="0.05" depth="0.03"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.25 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.8 -0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="window" color="#f2e71d" position="0.25 0.6 0.1" width="0.1" height="0.2" depth="0.1"></a-box>
+              <a-box id="base" color="#1d8262" position="-0.05 0 0" width="0.6" height="0.1" depth="0.85"></a-box>
+              <a-box id="cover" color="#1d8262" position="0 1.0 0" width="0.6" height="0.1" depth="0.6"></a-box>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
