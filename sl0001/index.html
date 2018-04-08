@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0001</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+      <a-sphere id="earth" position="0 -7 -5" radius="7" color="#669900" shadow
+        static-body></a-sphere>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-entity position="0 -7 -5" scale="1.5 1.5 1.5">
+        <a-entity id="building" dynamic-body position="0 5.15 0">
+          <a-box id="head" color="#eb6f5f" width="1.5" height="2" depth="1.5"></a-box>
+          <a-box id="roof" color="#592923" width="1.7" height="0.2" depth="2.0" position="0 1 0.2"></a-box>
+          <a-box id="pole" color="#592923" width="0.1" height="2" depth="0.1" position="-0.75 0 1.1"></a-box>
+          <a-box id="pole" color="#592923" width="0.1" height="2" depth="0.1" position="0.75 0 1.1"></a-box>
+          <a-box id="base" color="#592923" width="0.3" height="0.2" depth="0.3" position="0.75 -0.6 1.1"></a-box>
+          <a-box id="base" color="#592923" width="0.3" height="0.2" depth="0.3" position="-0.75 -0.6 1.1"></a-box>
+          <a-box id="door" color="#592923" width="0.3" height="0.5" depth="0.1" position="-0.16 -0.4 0.75"></a-box>
+          <a-box id="door" color="#592923" width="0.3" height="0.5" depth="0.1" position="0.16 -0.4 0.75"></a-box>
+          <a-box id="sign" color="#ed5909" width="0.8" height="0.5" depth="0.25" position="0 1.25 0.37"></a-box>
+          <a-entity text="font: exo2bold; color: #000000; align: center; width:3; letterSpacing: 5; value: PIZZA" position="0 1.30 0.5" wrap-count="20">
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="0.4 -1 0.275"></a-box>
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="0 -1 0.275"></a-box>
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="-0.4 -1 0.275"></a-box>
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="0.4 -0.6 0.275"></a-box>
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="0 -0.6 0.275"></a-box>
+          <a-box id="window" color="#4ac3ef" width="0.25" height="0.25" depth="0.05" position="-0.4 -0.6 0.275"></a-box>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
