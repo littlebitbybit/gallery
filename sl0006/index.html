@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0006</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+      <a-camera rotation="0 -20 0"></a-camera>
+      <a-sky color="#6EBAA7"></a-sky>
+
+      <a-sphere id="earth" position="2.5 -7 -4" radius="7" color="#0f6891" shadow
+        static-body></a-sphere>
+      <a-entity position="2.5 0 0">
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+      </a-entity>
+
+      <a-entity position="2.5 -7 -4">
+        <a-entity id="boat" dynamic-body position="0 7.5 0">
+          <a-cylinder id="pothole" position="-1.25 0.25 0.35" shadow color="#FFFFFF" height="0.15" radius="0.15" rotation="0 90 90"></a-cylinder>
+          <a-box id="anchor" position="-1.25 0 0.45" color="#333333" height="0.05" width="0.3" depth="0.05"></a-box>
+          <a-box id="anchor" position="-1.25 0.15 0.45" color="#333333" height="0.3" width="0.05" depth="0.05"></a-box>
+          <a-box id="body" shadow color="#555555" width="2" height="1.5" depth="1"></a-box>
+          <a-box id="tail" shadow color="#555555" position="1.25 0.12 0" width="0.5" height="1.25" depth="0.8"></a-box>
+          <a-box id="left" shadow color="#555555" position="0 0.25 0.5" width="1.5" height="1" depth="0.1"></a-box>
+          <a-box id="head1" shadow color="#555555" position="-1.25 0.12 0" width="0.5" height="1.25" depth="0.8"></a-box>
+          <a-box id="head2" shadow color="#555555" position="-1.6 0.25 0" width="0.25" height="1" depth="0.6"></a-box>
+          <a-box id="head3" shadow color="#555555" position="-1.8 0.37 0" width="0.25" height="0.75" depth="0.4"></a-box>
+          <a-box id="head4" shadow color="#555555" position="-2 0.5 0" width="0.25" height="0.5" depth="0.2"></a-box>
+          <a-box id="head5" shadow color="#555555" position="-2.2 0.62 0" width="0.25" height="0.25" depth="0.1"></a-box>
+          <a-box id="right" shadow color="#555555" position="0 0.25 -0.5" width="1.5" height="1" depth="0.1"></a-box>
+          <a-box id="bridge" shadow color="#666666" position="0 1.0 0" width="2" height="0.5" depth="0.5"></a-box>
+          <a-box id="bridge" shadow color="#666666" position="0 1.0 0" width="1.25" height="0.5" depth="0.75"></a-box>
+          <a-box id="bridge" shadow color="#666666" position="0 1.0 0" width="1.75" height="0.75" depth="0.4"></a-box>
+          <a-box id="bridge" shadow color="#333333" position="-0.9 1.1 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="#333333" position="-0.9 1 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="#333333" position="-0.9 0.9 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0.9 1.1 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0.9 1 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0.9 0.9 0" width="0.25" height="0.05" depth="0.55"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0 1.1 0" width="0.8" height="0.05" depth="0.8"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0 1.0 0" width="0.8" height="0.05" depth="0.8"></a-box>
+          <a-box id="bridge" shadow color="cyan" position="0 0.9 0" width="0.8" height="0.05" depth="0.8"></a-box>
+          <a-cylinder shadow color="cyan" position="0 1.5 0" radius="0.15" height="0.5"></a-cylinder>
+          <a-cylinder shadow color="#333333" position="0 1.5 0" radius="0.12" height="0.6"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="0.5 1.5 0" radius="0.15" height="0.5"></a-cylinder>
+          <a-cylinder shadow color="#333333" position="0.5 1.5 0" radius="0.12" height="0.6"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="-0.5 1.5 0" radius="0.15" height="0.5"></a-cylinder>
+          <a-cylinder shadow color="#333333" position="-0.5 1.5 0" radius="0.12" height="0.6"></a-cylinder>
+
+          <a-cylinder shadow color="cyan" position="-0.5 0 0" radius="0.1" height="1.15" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="-0.25 0 0" radius="0.1" height="1.15" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="0 0 0" radius="0.1" height="1.15" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="0.25 0 0" radius="0.1" height="1.15" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow color="cyan" position="0.5 0 0" radius="0.1" height="1.15" rotation="0 90 90"></a-cylinder>
+          <a-box position="0 0.35 0" shadow color="#b72b12" width="1.5" height="0.1" depth="1.11"></a-box>
+          <a-box position="0 0.35 0" shadow color="#b72b12" width="2" height="0.1" depth="1.01"></a-box>
+          <a-box position="0 0.35 0" shadow color="#b72b12" width="3" height="0.1" depth="0.81"></a-box>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
