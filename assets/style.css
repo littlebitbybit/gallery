@@ -1,0 +1,36 @@
+.image-mask {
+    overflow:hidden;
+    width:100%;
+    padding:0;
+}
+.wide .image-mask {
+    height:20em;
+}
+.tall .image-mask {
+    height:40em;
+}
+.image-mask span,.image-mask > a {
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+}
+section div.image-mask-container {
+    margin:2em 0;
+}
+.image-mask p {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    left:0;
+    background-color:rgba(0,0,0,0.8);
+    text-align:left;
+    color:#FFF;
+    padding:1em 2em;
+    margin:0;
+    transform: translateY(100%);
+    transition: 0.2s ease;
+}
+.image-mask:hover p {
+    transform: translateY(0)
+}
