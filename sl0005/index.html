@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0005</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+
+        <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -5 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -6 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-box shadow id="ground" color="#3f913d" width="20" height="0.1" depth="20"></a-box>
+      <a-box shadow id="road" position="0 0.1 -4" color="#f4ee84" width="20" height="0.1" depth="2"></a-box>
+      <a-entity id="stripes" position="0 0.2 -4">
+          <a-box shadow position="0 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="2 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="4 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="6 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="-2 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="-4 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+          <a-box shadow position="-6 0 0" color="#333333" width="1" height="0.1" depth="0.1"></a-box>
+      </a-entity>
+      <a-entity id="car" position="0 0.15 -4">
+          <a-box shadow position="-0.25 0.5 0" color="#b72b12" width="2.5" height=".5" depth="1"></a-box>
+          <a-box shadow position="0.12 0.5 0" color="#b72b12" width="2.25" height=".4" depth="0.95"></a-box>
+          <a-box shadow position="0.25 0.5 0" color="#b72b12" width="2.5" height=".3" depth="0.9"></a-box>
+          <a-box shadow position="0.1 0.75 0" color="#b72b12" width="1.2" height=".3" depth="0.8"></a-box>
+          <a-box shadow position="0.1 0.85 0" color="#b72b12" width="1.0" height=".3" depth="0.7"></a-box>
+          <a-box shadow position="0.1 1. 0" color="#b72b12" width="0.8" height=".3" depth="0.6"></a-box>
+          <a-box shaodw position="0.75 0.75 0" color="#37aed6" width="0.8" height="0.1" depth="0.6" rotation="0 0 -45"></a-box>
+          <a-box shaodw position="-0.55 0.75 0" color="#37aed6" width="0.8" height="0.1" depth="0.6" rotation="0 0 45"></a-box>
+          <a-box shaodw position="0.1 1.15 0" color="#37aed6" width="0.6" height="0.1" depth="0.4"w></a-box>
+          <a-cylinder shadow position="0.1 0.75 0.4" color="#37aed6" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow position="0.1 0.75 -0.4" color="#37aed6" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-box shadow position="-1.35 0.8 0" color="#b72b12" width="0.5" height="0.1" depth="0.9"></a-box>
+          <a-box shadow position="-1.5 0.9 0" color="#b72b12" width="0.4" height="0.1" depth="0.8"></a-box>
+          <a-box shadow position="-1.5 1.1 0.3" color="#b72b12" width="0.3" height="0.3" depth="0.1"></a-box>
+          <a-box shadow position="-1.5 1.1 -0.3" color="#b72b12" width="0.3" height="0.3" depth="0.1"></a-box>
+          <a-box shadow position="-1.5 1.2 0" color="#b72b12" width="0.4" height="0.1" depth="0.8"></a-box>
+          <a-cylinder shadow position="-1 0.5 0" color="#333333" radius="0.35" height="1.5" rotation="90 90 0"></a-cylinder>
+
+          <a-cylinder shadow position="0.5 0.25 0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow position="0.5 0.25 -0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow position="-1 0.25 -0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder shadow position="-1 0.25 0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
