@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0001</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+      <a-sphere id="earth" position="0 -7 -5" radius="7" color="#669900" shadow
+        static-body></a-sphere>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -7 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-entity position="0 -7 -5" scale="1.5 1.5 1.5">
+        <a-entity id="building" dynamic-body position="0 5.35 0">
+          <a-box id="head" shadow color="#666666" width="1.75" height="1" depth="1"></a-box>
+          <a-box id="head" shadow color="#666666" width="0.5" height="0.5" depth="1" position="1 -0.25 0"></a-box>
+          <a-cylinder id="wheel" shadow color="#333" width="0.5" height="0.2" radius="0.25" rotation="90 0 0" position="0.5 -0.5 0.5"></a-cylinder>
+          <a-cylinder id="wheel" shadow color="#333" width="0.5" height="0.2" radius="0.25" rotation="90 0 0" position="-0.5 -0.5 0.5"></a-cylinder>
+          <a-cylinder id="wheel" shadow color="#333" width="0.5" height="0.2" radius="0.25" rotation="90 0 0" position="-0.5 -0.5 -0.5"></a-cylinder>
+          <a-cylinder id="wheel" shadow color="#333" width="0.5" height="0.2" radius="0.25" rotation="90 0 0" position="0.5 -0.5 -0.5"></a-cylinder>
+          <a-sphere id="light" shadow color="#f4c542" radius="0.15" position="1.25 -0.25 -0.25"></a-sphere>
+          <a-sphere id="light" shadow color="#f4c542" radius="0.15" position="1.25 -0.25 0.25"></a-sphere>
+          <a-cylinder segments-radial="3" color="#666666" position="0.83 0 0" rotation="-90" scale="0.5 1 0.5"></a-cylinder>
+          <a-box color="#db3b13" position="0.6 0.9 0" height="0.15" width="0.25" depth="0.05"></a-box>
+          <a-box color="#db3b13" position="-0.6 0.9 0" height="0.15" width="0.25" depth="0.05"></a-box>
+          <a-cylinder color="#333333" position="0.5 0.5 0" radius="0.05" height="1"></a-cylinder>
+          <a-cylinder color="#333333" position="-0.5 0.5 0" radius="0.05" height="1"></a-cylinder>
+          <a-box id="window" shadow color="#42eef4" position="0.2 0.1 0" width="0.5" height="0.5" depth="1.05"></a-box>
+          <a-box id="window" shadow color="#42eef4" position="0.7 0.1 0" width="0.2" height="0.5" depth="1.05"></a-box>
+          <a-box id="window" shadow color="#42eef4" position="-0.45 0.1 0" width="0.5" height="0.5" depth="1.05"></a-box>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
