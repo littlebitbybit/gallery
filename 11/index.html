@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0001</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+      <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#ead8b9"></a-sky>
+
+      <a-entity position="0 -7 -5" scale="1.75 1.75 1.75">
+        <a-entity id="building" dynamic-body position="0 4 0">
+          <a-cone color="#a0611e" radius-bottom="0" radius-top="0.5"></a-cone>
+          <a-sphere color="#e8b620" radius="0.5" position="0 0.5 0"></a-sphere>
+          <a-sphere color="#e067a9" radius="0.5" position="0 1 0"></a-sphere>
+          <a-sphere color="#1da6e5" radius="0.5" position="0 1.5 0"></a-sphere>
+          <a-sphere color="#fff" radius="0.5" position="0 2 0"></a-sphere>
+
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
