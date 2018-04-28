@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sl0005</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene spawn-rewards physics="gravity: 0">
+
+        <a-assets>
+        <a-mixin id="small-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 0.75; height: 0.75; depth: 0.75"></a-mixin>
+        <a-mixin id="big-cloud" static-body material="color: #c8edeb"
+                 geometry="width: 1; height: 1; depth: 1"></a-mixin>
+      </a-assets>
+
+      <a-sky color="#6EBAA7"></a-sky>
+
+        <a-entity position="0 -4 -5" rotation="0 0 90" opacity="0.8">
+          <a-box position="8 0.75 0" rotation="60 80 30" mixin="small-cloud"></a-box>
+          <a-box position="8 0 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="8 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -5 -5" rotation="0 0 150" opacity="0.8">
+          <a-box position="0 -10 0" rotation="0 0 90" mixin="small-cloud"></a-box>
+          <a-box position="0.75 -10 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-0.75 -10 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+        <a-entity position="0 -6 -5" rotation="0 0 -60"  opacity="0.8">
+          <a-box position="-11 0 0" mixin="small-cloud"></a-box>
+          <a-box position="-11 0.75 0" rotation="45 45 0" mixin="big-cloud"></a-box>
+          <a-box position="-11 -0.75 0" rotation="-60 -80 -30" mixin="small-cloud"></a-box>
+        </a-entity>
+
+      <a-box shadow id="ground" color="#3f913d" width="20" height="0.1" depth="20"></a-box>
+      <a-box shadow id="road" position="0 0.1 -4" color="#663300" width="20" height="0.1" depth="2"></a-box>
+
+
+      <a-entity id="car" position="0 0.15 -4">
+          <a-box id="front" shadow position="-.5 .75 0" color="#3373FF" width="1.5" height=".8" depth="1"></a-box>
+
+          <a-box shadow position=".75 .75 0" color="#F17004" width="1" height=".8" depth="1"></a-box>
+          <a-box shadow position="1.75 .75 0" color="#73F104" width="1" height=".8" depth="1"></a-box>
+          <a-box shadow position="1.25 1.55 0" color="#F104BD" width="2" height=".8" depth="1"></a-box>
+          <a-box id="window" shadow position=".75 1.50 0" color="#6FC0DB" width=".9" height=".7" depth="1.05"></a-box>
+          <a-box id="window" shadow position="1.7 1.50 0" color="#6FC0DB" width=".9" height=".7" depth="1.05"></a-box>
+          <a-box id="window" shadow position="1.25 1.50 0" color="#6FC0DB" width="2.05" height=".7" depth=".9"></a-box>
+          <a-box id="handle" shadow position="1.1 1 0" color="#602D27" width=".02" height=".06" depth="1.05"></a-box>
+          <a-box id="handle" shadow position="2.1 1 0" color="#602D27" width=".02" height=".06" depth="1.05"></a-box>
+
+          <a-sphere id="light" shadow color="#f4c542" radius="0.15" position="-1.25 .7 -0.25"></a-sphere>
+          <a-sphere id="light" shadow color="#f4c542" radius="0.15" position="-1.25 .7 0.25"></a-sphere>
+
+          <a-cylinder id="antenae" shadow position="1 2.1 -0.2" color="#602D27" radius="0.02" height="1" rotation="-20 0 0"></a-cylinder>
+
+          <a-cylinder id="antenae" shadow position="1 2.1 0.2" color="#602D27" radius="0.02" height="1" rotation="20 0 0"></a-cylinder>
+
+
+
+
+          <a-cylinder id="wheel" shadow position="1.5 0.25 0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder id="wheel" shadow position="1.5 0.25 -0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder id="wheel" shadow position="-1 0.25 -0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+          <a-cylinder id="wheel" shadow position="-1 0.25 0.4" color="#333333" radius="0.25" height="0.1" rotation="0 90 90"></a-cylinder>
+
+
+          
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
