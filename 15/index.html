@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space!</title>
+    <meta name="description" content="">
+    <script src="static/bundle.js"></script>
+</head>
+<body>
+<a-scene spawn-rewards physics="gravity: 0">
+
+    <a-sky color="#000"></a-sky>
+    <a-entity star-system="count: 1000"></a-entity>
+
+    <!-- Default lighting injected by A-Frame. -->
+    <!-- Camera -->
+    <a-entity camera look-controls wasd-controls position="0 0.5 2" rotation="0 0 0">
+      <a-entity cursor="fuse: true; fuseTimeout: 250"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat"
+                scale="0.5 0.5 0.5"
+                raycaster="far: 20; interval: 1000; objects: .clickable">
+          <a-animation begin="fusing" easing="ease-in" attribute="scale"
+             fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="250"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <!-- Moon -->
+    <a-sphere 
+        position="12 12 -20"
+        radius="5">
+    </a-sphere>
+
+    <!-- Earth -->
+    <a-sphere 
+        position="60 -20 -30" 
+        radius="20" 
+        color="blue">
+    </a-sphere>
+
+    <!-- Saturn -->
+    <a-entity>
+        <a-sphere 
+            position="-180 90 -240" 
+            radius="40" 
+            color="orange">
+        </a-sphere>
+        <a-ring 
+            position="-180 90 -240" 
+            color="brown" 
+            rotation="90 0 0"
+            radius-inner="50" 
+            radius-outer="70">
+        </a-ring>
+    </a-entity>
+
+    <!-- Spaceship -->
+    <a-entity>
+        <a-torus 
+            position="0 0 -2" 
+            color="yellow" 
+            radius-tubular=".1" 
+            radius="1" 
+            rotation="90 0 0">
+        </a-torus>
+        <a-circle 
+            position="0 0 -2" 
+            radius="1"
+            color="gray"
+            rotation="-90 0 0">
+        </a-circle>
+        <a-sphere 
+            radius="1"
+            position="0 0 -2" 
+            material="color: blue; transparent: true; opacity: 0.5" 
+            theta-length="90">
+        </a-sphere>
+        <a-sphere 
+            radius=".3"
+            position="0 0 -2" 
+            material="color: red; transparent: true; opacity: 0.3; side:double" 
+            theta-length="90"
+            rotation="180 0 0">
+        </a-sphere>
+    </a-entity>
+
+    <!-- Spaceship -->
+    <a-entity>
+        <a-torus 
+            position="-8 4 -10" 
+            color="coral" 
+            radius-tubular=".1" 
+            radius="1" 
+            rotation="90 0 0">
+        </a-torus>
+        <a-circle 
+            position="-8 4 -10" 
+            radius="1"
+            color="gray"
+            rotation="-90 0 0"
+            material='side:double'>
+        </a-circle>
+        <a-sphere 
+            radius="1"
+            position="-8 4 -10" 
+            material="color: green; transparent: true; opacity: 0.5" 
+            theta-length="90">
+        </a-sphere>
+        <a-sphere 
+            radius=".3"
+            position="-8 4 -10" 
+            material="color: red; transparent: true; opacity: 0.3; side:double" 
+            theta-length="90"
+            rotation="180 0 0">
+        </a-sphere>
+    </a-entity>
+</a-scene>
+</body>
+</html>
