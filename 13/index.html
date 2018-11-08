@@ -1,1 +1,99 @@
-https://glitch.com/edit/#!/alluring-nail?path=index.html%20copy%20copy:1:0
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stage 1 | The Path Not Taken</title>
+    <meta name="description" content="">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script>
+  AFRAME.registerComponent('trigger-click-on', {
+  schema: {type: 'string'},
+
+  init: function () {
+    var identifier = this.data;
+    console.log('initializing click trigger for', identifier, 'with', this.el)
+    this.el.addEventListener('click', function (evt) {
+      console.log("click on", identifier);
+      setTimeout(function() {
+        document.querySelector(identifier).click();
+      }, 1000)
+    });
+  }
+})
+
+
+AFRAME.registerComponent('trigger-event-on', {
+  schema: {type: 'string'},
+
+  init: function () {
+    var identifier = this.data;
+    var event_name = this.el.attributes['trigger-event-name'].nodeValue;
+    console.log('initializing', event_name, 'trigger for', this.data, 'with', this.el)
+    this.el.addEventListener('click', function (evt) {
+      console.log("click on", identifier, 'with event', event_name)
+      setTimeout(function() {
+        document.querySelector(identifier).emit(event_name);
+      }, 1000)
+    });
+  }
+})
+  </script>
+
+</head>
+<body>
+<a-scene spawn-rewards physics="gravity: 0">
+
+    <a-assets>
+        <a-mixin id="tree" geomtry="scale: 0.75 0.75 0.75"></a-mixin>
+        <a-mixin id="foliage" material="color: #74bc5e; emissive: #9c0; emissiveIntensity: 0.25" geometry="segments-radial: 4; segments-height: 1; radius-bottom: 0.6; height: 2" position="0 1.5 0"></a-mixin>
+        <a-mixin id="trunk" material="color:#493d30;" geometry="depth:0.2;height: 0.5;width:0.2" position="0 0.25 0"></a-mixin>
+        <a-mixin id="stone" material="roughness:0.8;color:#1a3b54" geometry="segments-height:1" receiveShadow="true" castShadow="true"></a-mixin>
+    </a-assets>
+
+    <a-sky color="#a3d0ed"></a-sky>
+
+    <!-- Default lighting injected by A-Frame. -->
+
+    <a-entity camera look-controls wasd-controls position="0 0.5 2" rotation="0 0 0">
+      <a-entity cursor="fuse: true; fuseTimeout: 250"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat"
+                scale="0.5 0.5 0.5"
+                raycaster="far: 20; interval: 1000; objects: .clickable">
+          <a-animation begin="fusing" easing="ease-in" attribute="scale"
+             fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="250"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <a-box shadow id="ground" shadow="receive:true" color="#847452" width="10" height="0.1" depth="10"></a-box>
+  <a-cylinder position = "0 0.6 0" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "1 0.6 0" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "2 0.6 0" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "-1 0.6 0" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "0 0.6 -1" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "1 0.6 -1" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "2 0.6 -1" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-cylinder position = "-1 0.6 -1" color = "black" radius = "0.5" rotation = "90 0 0" height = "0.4"></a-cylinder>
+  <a-box width = "4" height = "1"; depth = "2" color = "green" position = "0.5 1.5 -0.5"></a-box>
+  <a-box color = "green" width = "2.5" height = "0.75" depth = "2" position = "0.5 2.5 -0.5"></a-box>
+  <a-box color = "green" width = "0.7" height = "0.5" depth = "2" position = "2 2.5 -0.5"></a-box>
+  <a-cylinder position = "-3 2.7 -0.5" color = "black" radius = "0.1" height = "5" rotation = "0 0 90"></a-cylinder>
+  <a-cylinder position = "-2 1.5 -0.5" color = "black" radius = "0.1" height = "2" rotation = "0 0 90"></a-cylinder>
+  <a-cylinder position = "1 4.5 -0.5" color = "#5F3535" radius = "0.1" height = "3"></a-cylinder>
+  <a-box color = "red" height = "1" width = "1.5" depth = "0.1" position = "1.7 5.3 -0.5"></a-box>
+  <a-box color = "black" height = "1.05" width = "0.2" depth = "0.02" position = "1.7 5.27 -0.45"></a-box>
+  <a-box color = "black" height = "0.2" width = "1.5" depth = "0.02" position = "1.7 5.3 -0.45"></a-box>
+  <a-circle color = "white" radius = "0.3" position = "1.72 5.25 -.42"></a-circle>
+  <a-box color = "black" height = "0.4" width = "0.1" depth = "0.02" position = "1.7 5.23 -0.4"></a-box>
+  <a-box color = "black" height = "0.1" width = "0.4" depth = "0.02" position = "1.7 5.23 -0.4"></a-box>
+  <a-cylinder color = "black" height = "0.4" radius = "0.1" position = "2.05 3 -0.5"></a-cylinder>
+  <a-box color = "grey" height = ".2" depth = "0.2" width = "0.2" position = "2.05 3.5 -0.5" rotation = "23 0 0"></a-box>
+  <a-box color = "grey" height = ".2" depth = "0.2" width = "0.2" position = "2.3 3.8 -0.5" rotation = "69 0 0"></a-box>
+  <a-box color = "grey" height = ".2" depth = "0.2" width = "0.2" position = "2.1 4 -0.5" rotation = "2 45 0"></a-box>
+  <a-box color = "grey" height = ".2" depth = "0.2" width = "0.2" position = "2.6 4.3 -0.5" rotation = "23 67 33"></a-box>
+  <a-box color = "grey" height = ".2" depth = "0.2" width = "0.2" position = "2.7 4.6 -0.5" rotation = "189 7 78"></a-box>
+  <a-circle color = "#92E9EE" radius = "0.2" position = "-.2 2.5 0.5"></a-circle>
+  <a-sphere color = "white" radius = "0.3" height = "0.3" position = "0.3 2.9 -0.5"></a-sphere>
+  </a-scene>
+</body>
+</html>
